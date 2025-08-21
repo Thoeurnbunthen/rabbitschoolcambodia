@@ -5,18 +5,28 @@ import Image from "next/image";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 import Link from "next/link";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { FaHandHoldingHeart } from "react-icons/fa";
 
 const Page = () => {
   const [active, setActive] = useState<number | null>(null);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
+
   return (
-    <div className="bg-[#F7F5F4] ">
+    <div className="bg-[#F7F5F4] w-full">
       <Navbar />
 
-      {/* --- HERO --- */}
       <section className="relative w-full h-[60vh] sm:h-[50vh] max-sm:h-[50vh] md:h-screen">
         <Image
-          src="/Pasted image (4).png"
+          src="/images/image copy 4.png"
           alt="Rabbit School"
           fill
           priority
@@ -24,22 +34,30 @@ const Page = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
 
-        <div className=" md:max-w-1/2  absolute inset-0 flex flex-col justify-center  px-4 md:px-12 text-start text-[#FED45F] font-extrabold">
-          <h1 className="  text-2xl sm:text-4xl md:text-5xl font-bold drop-shadow-lg shadow-black leading-snug">
-            <span className="text-white ">Our Story:</span> The Belief That
+        <div
+          className="md:max-w-1/2 absolute inset-0 flex flex-col justify-center px-4 md:px-12 text-start text-[#FED45F] font-extrabold"
+          data-aos="fade-up"
+        >
+          <h1
+            className="text-2xl sm:text-4xl md:text-5xl font-bold drop-shadow-lg shadow-black leading-snug"
+            data-aos="zoom-in"
+          >
+            <span className="text-white">Our Story:</span> The Belief That
             Started It All — Every Child Deserves Opportunity
           </h1>
         </div>
       </section>
 
-      {/* --- SECTION 1 --- */}
-      <div className="bg-white p-6 md:p-12 drop-shadow-lg shadow-black">
+      <div
+        className="bg-white p-6 md:p-12 drop-shadow-lg shadow-black animate-fadeInUp"
+        data-aos="fade-left"
+      >
         <div className="flex flex-col md:flex-row-reverse md:gap-8 items-center md:items-start ">
           <div className="md:w-1/2 ">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-[#623D3C]">
               A Belief that Started it All
             </h2>
-            <p className="mb-4 flex text-justify md:mt-10">
+            <p className="mb-4 flex text-justify md:mt-10 ">
               The Rabbit School is a Cambodian NGO that began in May 1997 as a
               pilot project to provide education to children with special needs
               at the Nutrition Centre— a government-run orphanage in Phnom Penh
@@ -52,7 +70,7 @@ const Page = () => {
           </div>
           <div className="md:w-1/2 mt-6 md:mt-0 overflow-hidden rounded-lg transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 active:scale-95">
             <Image
-              src="/Pasted image (8).png"
+              src="/images/Pasted image (8).png"
               alt="Vocational Training"
               width={800}
               height={500}
@@ -62,12 +80,14 @@ const Page = () => {
         </div>
       </div>
 
-      {/* --- SECTION 2 --- */}
       <section className="px-4 md:px-12 mt-12">
-        <div className="flex flex-col md:flex-row-reverse md:gap-8 items-center md:items-start mb-16">
+        <div
+          className="flex flex-col md:flex-row-reverse md:gap-8 items-center md:items-start mb-16"
+          data-aos="fade-right"
+        >
           <div className="md:w-1/2 mt-6 md:mt-0 overflow-hidden rounded-lg transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 active:scale-95">
             <Image
-              src="/Pasted image (7).png"
+              src="/images/Pasted image (7).png"
               alt="Vocational Training"
               width={800}
               height={500}
@@ -92,8 +112,7 @@ const Page = () => {
         </div>
       </section>
 
-      {/* --- SECTION 3 --- */}
-      <div className="bg-[#8BAEA7] p-6 md:p-12">
+      <div className="bg-[#8BAEA7] p-6 md:p-12" data-aos="fade-up">
         <div className="flex flex-col md:flex-row-reverse md:gap-8 items-center md:items-start ">
           <div className="md:w-1/2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-[#623D3C]">
@@ -109,7 +128,7 @@ const Page = () => {
           </div>
           <div className="md:w-1/2 mt-6 md:mt-0 overflow-hidden rounded-lg transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 active:scale-95">
             <Image
-              src="/Pasted image (6).png"
+              src="/images/Pasted image (6).png"
               alt="Vocational Training"
               width={800}
               height={500}
@@ -119,12 +138,11 @@ const Page = () => {
         </div>
       </div>
 
-      {/* --- SECTION 4 --- */}
-      <div className="px-4 md:px-12 py-12">
+      <div className="px-4 md:px-12 py-12" data-aos="fade-left">
         <div className="flex flex-col md:flex-row-reverse md:gap-8 items-center md:items-start">
           <div className="md:w-1/2 mt-6 md:mt-0 overflow-hidden rounded-lg transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 active:scale-95">
             <Image
-              src="/Pasted image (5).png"
+              src="/images/Pasted image (5).png"
               alt="Vocational Training"
               width={800}
               height={500}
@@ -145,10 +163,12 @@ const Page = () => {
         </div>
       </div>
 
-      {/* --- BANNER --- */}
-      <section className="relative w-full md:h-[50vh] sm:h-[25vh] max-sm:h-[20vh]  flex items-center justify-center">
+      <section
+        className="relative w-full md:h-[50vh] sm:h-[25vh] max-sm:h-[20vh]  flex items-center justify-center"
+        data-aos="fade-up"
+      >
         <Image
-          src="/ss.jpg"
+          src="/images/ss.jpg"
           alt="Rabbit School"
           fill
           priority
@@ -156,7 +176,10 @@ const Page = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#A81B17]/70 via-[#A81B17]/50 to-[#A81B17]/70" />
 
-        <div className=" md:max-w-1/1  relative inset-0 flex flex-col justify-center   md:px-12   font-extrabold  z-10 text-center text-white px-4">
+        <div
+          className=" md:max-w-1/1  relative inset-0 flex flex-col justify-center   md:px-12   font-extrabold  z-10 text-center text-white px-4"
+          data-aos="fade-right"
+        >
           <h1 className="text-2xl md:text-4xl font-bold">
             What Drives Us: A Belief in Every Child
           </h1>
@@ -167,8 +190,7 @@ const Page = () => {
         </div>
       </section>
 
-      {/* --- WHY CAMBODIA --- */}
-      <section className="max-w-8xl mx-auto py-10 px-6">
+      <section className="max-w-8xl mx-auto py-10 px-6" data-aos="fade-up">
         <h2 className="text-2xl md:text-3xl font-bold text-[#623D3C] mb-10 px-10 sm:px-2 max-sm:px-2">
           Why Cambodia
         </h2>
@@ -221,8 +243,7 @@ const Page = () => {
         </div>
       </section>
 
-      {/* --- OUR CORE DRIVERS --- */}
-      <section className="max-w-7xl mx-auto px-15 ">
+      <section className="max-w-7xl mx-auto px-15 " data-aos="fade-down">
         <h2 className="text-2xl md:text-3xl font-bold text-[#623D3C] mb-10">
           Our Core Drivers
         </h2>
@@ -231,7 +252,7 @@ const Page = () => {
           <div className="bg-[#79A2C9] text-white rounded-lg p-6 shadow-md flex flex-col items-center">
             <div className="flex gap-5">
               <Image
-                src="/Pasted image.png"
+                src="/images/Pasted image.png"
                 alt="Empowerment Icon"
                 width={48}
                 height={48}
@@ -250,7 +271,7 @@ const Page = () => {
           <div className="bg-[#8BAEA7] text-white rounded-lg p-6 shadow-md flex flex-col items-center">
             <div className="flex gap-5">
               <Image
-                src="/Pasted image (2).png"
+                src="/images/Pasted image (2).png"
                 alt="Empowerment Icon"
                 width={48}
                 height={48}
@@ -269,7 +290,7 @@ const Page = () => {
           <div className="bg-[#8BAEA7] text-white rounded-lg p-6 shadow-md flex flex-col items-center">
             <div className="flex gap-5">
               <Image
-                src="/Pasted image (3).png"
+                src="/images/Pasted image (3).png"
                 alt="Empowerment Icon"
                 width={48}
                 height={48}
@@ -287,14 +308,13 @@ const Page = () => {
         </div>
       </section>
 
-      {/* --- PICTURES OF STUDENTS WITH CLICK TO ENLARGE --- */}
-      <section className="max-w-7xl mx-auto py-16 px-6">
+      <section className="max-w-7xl mx-auto py-16 px-6" data-aos="fade-right">
         <div className="mt-20 ">
           <h3 className="text-4xl text-[#623D3C] sm:text-2xl max-sm:text-2xl font-bold p-5 ">
             Picture Of Students
           </h3>
-          <div className="overflow-x-auto ">
-            <div className="flex gap-6 pb-4">
+          <div className="overflow-x-auto scrollbar-hide">
+            <div className="flex gap-4 pb-4">
               {[
                 "/images/image copy.png",
                 "/images/image copy 6.png",
@@ -330,19 +350,21 @@ const Page = () => {
         </div>
       </section>
 
-      {/* --- SDG GOALS --- */}
-      <section className="max-w-2xl mx-auto py-12 px-4 sm:px-6 text-center">
+      <section
+        className="max-w-2xl mx-auto py-12 px-4 sm:px-6 text-center"
+        data-aos="fade-left"
+      >
         <h2 className="text-2xl sm:text-xl md:text-4xl font-bold text-[#623D3C]">
           Aligned with the UN SDG Goals
         </h2>
-        <p className="mt-4 text-black text-sm  max-sm:text-justify">
+        <p className="mt-4 text-black text-sm  ">
           Our work supports inclusive and equitable quality education, decent
           work, and reduced inequalities.
         </p>
 
         <div className="grid grid-cols-1 max-sm:grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-2 mt-8  max-sm:gap-1">
           <Image
-            src="/Pasted image (9).png"
+            src="/images/Pasted image (9).png"
             alt="SDG 4 Quality Education"
             width={100}
             height={100}
@@ -350,7 +372,7 @@ const Page = () => {
           />
 
           <Image
-            src="/Pasted image (10).png"
+            src="/images/Pasted image (10).png"
             alt="SDG 8 Decent Work and Economic Growth"
             width={200}
             height={200}
@@ -358,19 +380,22 @@ const Page = () => {
           />
 
           <Image
-            src="/Pasted image (11).png"
+            src="/images/Pasted image (11).png"
             alt="SDG 10 Reduced Inequalities"
             width={200}
             height={200}
             className="rounded-lg shadow-md object-cover max-sm:w-25 max-sm:h-25 md:w-full mx-auto"
           />
         </div>
-
-        <Link href="/donate">
-          <button className="cursor-pointer mt-6 sm:mt-8 bg-yellow-400 hover:bg-yellow-800 text-black font-bold py-2 px-6 rounded-full shadow-md">
-            Donate
-          </button>{" "}
-        </Link>
+        <div className=" w-30 mt-10 ">
+          <Link
+            href="/donate"
+            className="hidden md:flex items-center space-x-2 bg-orange-400 hover:bg-orange-500 text-white font-medium px-5 py-2 rounded-full transition"
+          >
+            <FaHandHoldingHeart />
+            <span>Donate</span>
+          </Link>
+        </div>
       </section>
       <Footer />
     </div>
