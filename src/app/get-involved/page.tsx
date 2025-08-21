@@ -74,7 +74,7 @@ const GetInvolvedPage = () => {
                 text: "Join our passionate team and help empower children and youth with intellectual disabilities and autism to reach their full potential.",
                 image: "/images/work.png",
                 bg: "bg-orange-300",
-                link: "/involved",
+                link: "/jobs",
                 button: "Jobs & Work",
               },
             ].map((card, idx) => (
