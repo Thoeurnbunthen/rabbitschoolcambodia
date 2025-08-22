@@ -1,5 +1,6 @@
 "use client";
-
+import {useTranslations} from 'next-intl';
+import {Link} from '@/i18n/navigation';
 import Image from "next/image";
 import {
   Users,
@@ -27,7 +28,6 @@ import logos7 from "../../public/Donates/logo(7).png";
 import donate from "../../public/donate.png";
 import { FaHandHoldingHeart } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
-import Link from "next/link";
 import { useState } from "react";
 import { Gift } from "lucide-react";
 import getInvolvedPic from "../../public/picture/get invulvet.png";
@@ -35,6 +35,7 @@ import { Graduate } from "next/font/google";
 
 const logoImages = [logos, logos2, logos3, logos4, logos5, logos6, logos7];
 export default function Home() {
+  const t = useTranslations();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -94,7 +95,8 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            EXTRAORDINARY LEARNING FOR EXTRAORDINARY LEARNERS
+           <h3>{t("hero.title")}</h3>
+
           </motion.h3>
 
           <motion.p
@@ -103,9 +105,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            Providing children and youth with intellectual disabilities and
-            autism access to education, support, confidence, and skills to reach
-            their full potential.
+            <p>{t("hero.description")}</p>
           </motion.p>
 
           <motion.button

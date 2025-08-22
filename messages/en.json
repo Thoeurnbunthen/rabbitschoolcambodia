@@ -1,0 +1,40 @@
+{
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "contact": "Contact Us",
+      "donate": "Donate",
+      "getInvolved": "Get Involved",
+      "newsletter": "Newsletter"
+    },
+  "hero": {
+    "title": "EXTRAORDINARY LEARNING FOR EXTRAORDINARY LEARNERS",
+    "description": "Some description..."
+  },
+  "story": {
+    "title": "Our Story",
+    "description": "We started with a vision..."
+  },
+  "howWeWork": {
+    "title": "How We Work",
+    "description": "We focus on community impact..."
+  },
+  "impact": {
+    "title": "Our Impact",
+    "description": "We have reached thousands of learners..."
+  },
+  "donate": {
+    "title": "Donate",
+    "description": "Support our mission",
+    "button": "Donate Now"
+  },
+  "involved": {
+    "title": "Get Involved",
+    "description": "Join our mission"
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Stay updated with us",
+    "subscribe": "Subscribe"
+  }
+}
